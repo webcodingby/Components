@@ -1,0 +1,101 @@
+body {
+  background: #ccc;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.nav__mobile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: translateX(-1000px);
+  transition: transform ease .3s;
+  position: absolute;
+  margin: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  overflow: hidden;
+}
+
+.nav__mobile--list {
+  list-style: none;
+  padding: 10px;
+}
+
+.nav__mobile--link {
+  text-decoration: none;
+  color: #fff;
+}
+
+.nav__mobile--link:hover,
+.nav__mobile--link:focus,
+.nav__mobile--link:active {
+  border-bottom: 2px solid #ae8300;
+}
+
+.nav__mobile--button {
+  position: relative;
+  z-index: 10;
+  margin-left: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #fff;
+  border-radius: 5px;
+}
+
+.nav__mobile--icon {
+  position: relative;
+  width: 20px;
+  height: 2px;
+  background: #fff;
+}
+
+.nav__mobile--icon:before,
+.nav__mobile--icon:after {
+  position: absolute;
+  content: "";
+  width: 20px;
+  height: 2px;
+  background: #fff;
+  transition: all ease 0.3s;
+}
+
+.nav__mobile--icon:before {
+  top: -5px;
+  left: 0px;
+}
+
+.nav__mobile--icon:after {
+  bottom: -5px;
+  left: 0;
+}
+
+.close .nav__mobile--icon {
+  background-color: transparent;
+}
+
+.close .nav__mobile--icon:before {
+  top: 10%;
+  transform: rotate(45deg);
+  transition: all ease 0.3s;
+}
+
+.close .nav__mobile--icon:after {
+  transform: rotate(-45deg);
+  bottom: 0;
+  transition: all ease 0.3s;
+}
+
+.visible {
+  transform: translateX(0);
+  transition: transform ease .3s;
+}
